@@ -1,0 +1,22 @@
+{
+  "id": "filter-coffee",
+  "name": "South Indian Filter Coffee",
+  "state": "Tamil Nadu",
+  "country": "India",
+  "heroImage": "/images/recipes/filter-coffee-hero.jpg",
+  "baseServings": 2,
+  "ingredients": [
+    { "id": "coffee-powder", "name": "filter coffee powder (with chicory)", "image": "/images/ingredients/coffee-powder.jpg", "baseQuantity": 4, "unit": "tsp", "scalesWithServings": true },
+    { "id": "hot-water", "name": "hot water (just off the boil)", "image": "/images/ingredients/water.jpg", "baseQuantity": 0.75, "unit": "cup", "scalesWithServings": true },
+    { "id": "milk", "name": "milk", "image": "/images/ingredients/milk.jpg", "baseQuantity": 1.5, "unit": "cup", "scalesWithServings": true },
+    { "id": "sugar", "name": "sugar", "image": "/images/ingredients/sugar.jpg", "baseQuantity": 2, "unit": "tsp", "scalesWithServings": true }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Add the {coffee-powder} to the top chamber of a South Indian coffee filter and press down gently and evenly with the pressing disc.", "ingredientRefs": ["coffee-powder"] },
+    { "order": 2, "instruction": "Slowly pour the {hot-water} over the pressed coffee powder. Cover and let it drip through into the bottom chamber for 15-20 minutes to form the decoction.", "ingredientRefs": ["hot-water"], "timerSeconds": 1080 },
+    { "order": 3, "instruction": "Heat the {milk} in a saucepan until it comes to a boil, then let it simmer for a minute.", "ingredientRefs": ["milk"], "timerSeconds": 120 },
+    { "order": 4, "instruction": "In each cup, pour 2-3 tablespoons of the decoction, then add the hot {milk} and {sugar} to taste.", "ingredientRefs": ["milk", "sugar"] },
+    { "order": 5, "instruction": "Pour the coffee back and forth between the tumbler and the davara (cup and saucer) a few times to froth it up, then serve hot.", "ingredientRefs": [] }
+  ],
+  "sources": ["vegrecipesofindia.com/filter-coffee-recipe", "whiskaffair.com/filter-coffee-recipe", "malgudidays.com.au filter coffee brew guide"]
+}

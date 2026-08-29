@@ -1,0 +1,23 @@
+{
+  "id": "dosa",
+  "name": "Plain Dosa",
+  "state": "Tamil Nadu",
+  "country": "India",
+  "heroImage": "/images/recipes/dosa-hero.jpg",
+  "baseServings": 4,
+  "ingredients": [
+    { "id": "rice", "name": "idli rice or dosa rice", "image": "/images/ingredients/rice.jpg", "baseQuantity": 3, "unit": "cup", "scalesWithServings": true },
+    { "id": "urad-dal", "name": "urad dal (split black gram)", "image": "/images/ingredients/urad-dal.jpg", "baseQuantity": 1, "unit": "cup", "scalesWithServings": true },
+    { "id": "fenugreek", "name": "fenugreek (methi) seeds", "image": "/images/ingredients/fenugreek.jpg", "baseQuantity": 1, "unit": "tsp", "scalesWithServings": false },
+    { "id": "salt", "name": "salt", "image": "/images/ingredients/salt.jpg", "baseQuantity": 1.5, "unit": "tsp", "scalesWithServings": false },
+    { "id": "oil", "name": "oil (for cooking)", "image": "/images/ingredients/oil.jpg", "baseQuantity": 3, "unit": "tbsp", "scalesWithServings": true }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Wash and soak {rice} and {urad-dal} separately, with the {fenugreek} added to the dal. Soak both for 4-6 hours.", "ingredientRefs": ["rice", "urad-dal", "fenugreek"], "timerSeconds": 18000 },
+    { "order": 2, "instruction": "Drain and grind the urad dal to a smooth, fluffy paste using a little water. Grind the rice separately to a slightly grainy (not fully smooth) batter.", "ingredientRefs": ["rice", "urad-dal"] },
+    { "order": 3, "instruction": "Combine both batters with the {salt}, mix well, cover, and let it ferment in a warm spot for 8-12 hours until risen and lightly sour-smelling.", "ingredientRefs": ["salt"], "timerSeconds": 32400 },
+    { "order": 4, "instruction": "Heat a flat tawa. Pour a ladle of batter in the center and spread outward in a thin circular motion.", "ingredientRefs": [] },
+    { "order": 5, "instruction": "Drizzle a little {oil} around the edges and on top. Cook until the base is golden and crisp, then fold and serve hot.", "ingredientRefs": ["oil"] }
+  ],
+  "sources": ["vegrecipesofindia.com/dosa-recipe-dosa-batter-recipe", "indianhealthyrecipes.com/dosa-recipe-dosa-batter", "kamdhenufoods.in (rice:urad dal 3:1 ratio)"]
+}

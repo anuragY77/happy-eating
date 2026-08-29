@@ -1,0 +1,28 @@
+{
+  "id": "sambar",
+  "name": "Sambar",
+  "state": "Tamil Nadu",
+  "country": "India",
+  "heroImage": "/images/recipes/sambar-hero.jpg",
+  "baseServings": 4,
+  "ingredients": [
+    { "id": "toor-dal", "name": "toor dal (split pigeon pea)", "image": "/images/ingredients/toor-dal.jpg", "baseQuantity": 0.5, "unit": "cup", "scalesWithServings": true },
+    { "id": "mixed-veg", "name": "mixed vegetables (drumstick, carrot, brinjal, pumpkin), chopped", "image": "/images/ingredients/mixed-veg.jpg", "baseQuantity": 1.5, "unit": "cup", "scalesWithServings": true },
+    { "id": "tamarind", "name": "tamarind pulp", "image": "/images/ingredients/tamarind.jpg", "baseQuantity": 1, "unit": "tbsp", "scalesWithServings": true },
+    { "id": "sambar-powder", "name": "sambar powder", "image": "/images/ingredients/sambar-powder.jpg", "baseQuantity": 2, "unit": "tbsp", "scalesWithServings": false },
+    { "id": "turmeric", "name": "turmeric powder", "image": "/images/ingredients/turmeric.jpg", "baseQuantity": 0.25, "unit": "tsp", "scalesWithServings": false },
+    { "id": "salt", "name": "salt", "image": "/images/ingredients/salt.jpg", "baseQuantity": 1, "unit": "tsp", "scalesWithServings": false },
+    { "id": "mustard-seeds", "name": "mustard seeds", "image": "/images/ingredients/mustard-seeds.jpg", "baseQuantity": 0.5, "unit": "tsp", "scalesWithServings": false },
+    { "id": "curry-leaves", "name": "curry leaves sprig", "image": "/images/ingredients/curry-leaves.jpg", "baseQuantity": 1, "unit": "sprig", "scalesWithServings": false },
+    { "id": "asafoetida", "name": "asafoetida (hing)", "image": "/images/ingredients/asafoetida.jpg", "baseQuantity": 1, "unit": "pinch", "scalesWithServings": false },
+    { "id": "oil", "name": "oil (for tempering)", "image": "/images/ingredients/oil.jpg", "baseQuantity": 1, "unit": "tbsp", "scalesWithServings": true }
+  ],
+  "steps": [
+    { "order": 1, "instruction": "Pressure-cook the {toor-dal} with the {turmeric} and 2 cups water for 3-4 whistles until soft. Mash it smooth.", "ingredientRefs": ["toor-dal", "turmeric"], "timerSeconds": 900 },
+    { "order": 2, "instruction": "In a separate pot, cook the {mixed-veg} in water until just tender (not mushy).", "ingredientRefs": ["mixed-veg"], "timerSeconds": 600 },
+    { "order": 3, "instruction": "Add the {tamarind} pulp, {sambar-powder}, and {salt} to the cooked vegetables. Simmer for 5-6 minutes.", "ingredientRefs": ["tamarind", "sambar-powder", "salt"], "timerSeconds": 360 },
+    { "order": 4, "instruction": "Add the mashed dal to the vegetable-tamarind mix, adjust water for a soupy (not thick) consistency, and simmer another 8-10 minutes.", "ingredientRefs": [], "timerSeconds": 540 },
+    { "order": 5, "instruction": "For tempering: heat {oil}, add {mustard-seeds} and let them splutter, then add {curry-leaves} and {asafoetida}. Pour over the sambar and mix.", "ingredientRefs": ["oil", "mustard-seeds", "curry-leaves", "asafoetida"] }
+  ],
+  "sources": ["vegrecipesofindia.com/sambhar-recipe-a-method-made-easy", "indianhealthyrecipes.com/andhra-sambar-recipe", "phoranmasala.com sambar powder guide", "ministryofcurry.com/sambar"]
+}
