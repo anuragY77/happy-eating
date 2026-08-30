@@ -8,9 +8,19 @@ export default function RecipePage({ params }: { params: { recipeId: string } })
     notFound();
   }
 
+  const ingredientImagesAvailable: Record<string, boolean> = {};
+  for (const ingredient of recipe.ingredients) {
+    ingredientImagesAvailable[ingredient.id] = imageAssetExists(ingredient.image);
+  }
+
   return (
     <main>
-      <RecipeDetail key={recipe.id} recipe={recipe} heroAvailable={imageAssetExists(recipe.heroImage)} />
+      <RecipeDetail
+        key={recipe.id}
+        recipe={recipe}
+        heroAvailable={imageAssetExists(recipe.heroImage)}
+        ingredientImagesAvailable={ingredientImagesAvailable}
+      />
     </main>
   );
 }

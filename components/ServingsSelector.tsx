@@ -9,14 +9,14 @@ interface ServingsSelectorProps {
 
 export default function ServingsSelector({ value, onChange }: ServingsSelectorProps) {
   return (
-    <div data-current-servings={value}>
-      <span>Servings:</span>
+    <div className="servings" data-current-servings={value}>
+      <span className="servings-label">Servings:</span>
       {PRESETS.map((n) => (
         <button key={n} type="button" onClick={() => onChange(n)} aria-pressed={value === n}>
           {n}
         </button>
       ))}
-      <label>
+      <label className="servings-label">
         Custom
         <input
           type="number"

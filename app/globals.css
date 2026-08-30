@@ -1,28 +1,231 @@
-/* Minimal layout-only styles. No design-system styling here (Phase 2). */
+/* Design.md Phase 2 — warm, appetite-driven, regional */
+:root {
+  --bg: #fbf6ef;
+  --accent: #d97b29;
+  --green: #3e5c3a;
+  --text: #2b211a;
+  --error: #b3423a;
+  --card-bg: #fffdf9;
+  --border: rgba(43, 33, 26, 0.16);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
 
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), serif;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  color: var(--green);
+}
+
+.app-header {
+  padding: 1.75rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  margin: 0;
+  color: var(--accent);
+}
+
+.app-header p {
+  margin: 0.25rem 0 0;
+  opacity: 0.8;
+}
+
+.content {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+}
+
 .recipe-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
 .recipe-card {
   display: block;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 1rem;
   text-decoration: none;
   color: inherit;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
 }
 
-.image-placeholder {
-  border: 1px dashed #ccc;
-  padding: 2rem;
+.recipe-card:hover {
+  border-color: var(--accent);
+}
+
+.recipe-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  color: var(--green);
+}
+
+.recipe-card-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.recipe-meta {
+  opacity: 0.8;
+}
+
+.hero-image,
+.hero-placeholder {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.hero-placeholder {
+  border: 1px dashed var(--border);
+  background: var(--card-bg);
+  padding: 3rem 1rem;
   text-align: center;
-  color: #888;
+  opacity: 0.6;
+}
+
+.servings {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.servings-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.servings button {
+  font: inherit;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+
+.servings button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.servings input {
+  font: inherit;
+  width: 4rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  margin-left: 0.25rem;
+  background: var(--card-bg);
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.ingredient-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.ingredient-thumb,
+.ingredient-thumb-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.ingredient-thumb {
+  object-fit: cover;
+}
+
+.ingredient-thumb-placeholder {
+  border: 1px dashed var(--border);
+  background: var(--card-bg);
+}
+
+.ingredient-name {
+  flex: 1;
+}
+
+.ingredient-quantity {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.step-number {
+  font-family: var(--font-heading), serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 4rem;
+  flex-shrink: 0;
+}
+
+.step-body {
+  flex: 1;
+}
+
+.step-body p {
+  margin: 0;
+}
+
+.step-timer {
+  font-size: 0.85rem;
+  color: var(--green);
 }

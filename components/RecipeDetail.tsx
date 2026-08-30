@@ -10,9 +10,14 @@ import StepList from "./StepList";
 interface RecipeDetailProps {
   recipe: Recipe;
   heroAvailable: boolean;
+  ingredientImagesAvailable: Record<string, boolean>;
 }
 
-export default function RecipeDetail({ recipe, heroAvailable }: RecipeDetailProps) {
+export default function RecipeDetail({
+  recipe,
+  heroAvailable,
+  ingredientImagesAvailable,
+}: RecipeDetailProps) {
   const [selectedServings, setSelectedServings] = useState(recipe.baseServings);
 
   const scaledIngredients = recipe.ingredients.map((ingredient) => ({
@@ -23,17 +28,17 @@ export default function RecipeDetail({ recipe, heroAvailable }: RecipeDetailProp
   return (
     <article>
       <h1>{recipe.name}</h1>
-      <p>
+      <p className="recipe-meta">
         {recipe.state}, {recipe.country} · base servings {recipe.baseServings}
       </p>
       {heroAvailable ? (
-        <img src={recipe.heroImage} alt={`${recipe.name} hero`} />
+        <img src={recipe.heroImage} alt={`${recipe.name} hero`} className="hero-image" />
       ) : (
-        <div className="image-placeholder">Recipe photo coming soon</div>
+        <div className="hero-placeholder">Recipe photo coming soon</div>
       )}
       <h2>Ingredients</h2>
       <ServingsSelector value={selectedServings} onChange={setSelectedServings} />
-      <IngredientList ingredients={scaledIngredients} />
+      <IngredientList ingredients={scaledIngredients} imageAvailable={ingredientImagesAvailable} />
       <h2>Steps</h2>
       <StepList steps={recipe.steps} ingredients={scaledIngredients} />
     </article>

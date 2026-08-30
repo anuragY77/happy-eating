@@ -16,12 +16,14 @@ export default function StepList({ steps, ingredients }: { steps: Step[]; ingred
   const nameById = Object.fromEntries(ingredients.map((i) => [i.id, i.name]));
 
   return (
-    <ol>
+    <ol className="steps">
       {steps.map((step) => (
-        <li key={step.order}>
-          <span>Step {step.order}</span>
-          <p>{renderInstruction(step.instruction, nameById)}</p>
-          {typeof step.timerSeconds === "number" && <p>Timer: {formatTimer(step.timerSeconds)}</p>}
+        <li key={step.order} className="step-item">
+          <span className="step-number">Step {step.order}</span>
+          <div className="step-body">
+            <p>{renderInstruction(step.instruction, nameById)}</p>
+            {typeof step.timerSeconds === "number" && <p className="step-timer">Timer: {formatTimer(step.timerSeconds)}</p>}
+          </div>
         </li>
       ))}
     </ol>

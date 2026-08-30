@@ -1,16 +1,29 @@
 import type { Ingredient } from "@/lib/types";
 
-export default function IngredientList({ ingredients }: { ingredients: Ingredient[] }) {
+interface IngredientListProps {
+  ingredients: Ingredient[];
+  imageAvailable?: Record<string, boolean>;
+}
+
+export default function IngredientList({ ingredients, imageAvailable }: IngredientListProps) {
   return (
-    <ul>
-      {ingredients.map((ingredient) => (
-        <li key={ingredient.id}>
-          <span>{ingredient.name}</span>
-          <span>
-            {ingredient.baseQuantity} {ingredient.unit}
-          </span>
-        </li>
-      ))}
+    <ul className="ingredient-list">
+      {ingredients.map((ingredient) => {
+        const available = imageAvailable?.[ingredient.id] ?? false;
+        return (
+          <li key={ingredient.id} className="ingredient-item">
+            {available ? (
+              <img className="ingredient-thumb" src={ingredient.image} alt={ingredient.name} />
+            ) : (
+              <span className="ingredient-thumb-placeholder" aria-hidden="true" />
+            )}
+            <span className="ingredient-name">{ingredient.name}</span>
+            <span className="ingredient-quantity">
+              {ingredient.baseQuantity} {ingredient.unit}
+            </span>
+          </li>
+        );
+      })}
     </ul>
   );
 }
